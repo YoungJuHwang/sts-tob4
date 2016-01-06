@@ -40,7 +40,7 @@ public class BookController {
 		logger.info("넘어온 페이지No. : {}",pageNo);
 		
 		int pageNumber = Integer.parseInt(pageNo);
-		int pageSize = 5;
+		int pageSize = 4;
 		int groupSize = 3;
 		int count = service.count();
 		logger.info("번호 : {}",count);
