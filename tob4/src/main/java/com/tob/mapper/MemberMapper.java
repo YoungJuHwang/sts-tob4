@@ -21,7 +21,7 @@ public interface MemberMapper {
 		public int update(MemberVO member);
 		public int delete(String userid);
 		public List<MemberVO> selectSomeBy(String domain, String searchword);
-		public List<MemberVO> getList(Command command);
+		public List<MemberVO> selectAll(Command command);
 		public int changePwd(MemberVO member);
 		public MemberVO selectOneBy(String userid);
 		public MemberVO logout();	
