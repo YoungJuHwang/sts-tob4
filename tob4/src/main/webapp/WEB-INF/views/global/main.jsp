@@ -159,7 +159,7 @@
     <section id="download" class="content-section">
         <div class="download-section">
             <div class="container">
-                <div class="col-lg-8 col-lg-offset-2" style="width: 100%; margin: auto;">
+                <div class="col-lg-8 col-lg-offset-2" style="width: 100%; margin: auto; ">
                 <hr />
                 <img src="${img}/reco.png" alt="" style="padding-top: 20px;"/>
                  <!-- 분야 추천 -->
@@ -262,7 +262,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="container content-section ">
+    <section id="contact" class="container content-section" style="padding-top: 15px;">
         <div class="row">
 			<div class="col-lg-8 col-lg-offset-2"
 				style="margin: auto; width: 100%; border: 1px solid #E6E6FA;">
@@ -295,7 +295,7 @@
 			</div>
 
 
-			<ul class="list-inline banner-social-buttons" style="text-align: center;">
+			<ul class="list-inline banner-social-buttons" style="text-align: center; padding-top: 50px;">
                     <li>
                     <a href="https://twitter.com/">
                     <img src="${img}/to_sns.png" />     </a>
