@@ -13,6 +13,14 @@
 			COUNT AS count
 		FROM CART
 	</select>
+	<select id="searchBybookid">
+		SELECT
+			CART_NUM AS cartNum,
+			BOOK_ID AS bookid,
+			USERID AS userid,
+			COUNT AS count
+		FROM CART WHERE BOOK_ID = #{bookid}
+	</select> 
  	<update id="changeCount">
  	
  	</update>
