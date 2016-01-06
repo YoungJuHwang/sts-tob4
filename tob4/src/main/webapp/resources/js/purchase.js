@@ -14,7 +14,7 @@ var Purchase = {
 					+'<td id = "s'+i+'">'+this.sum+'</td>'
 					+'<td id = "a'+i+'">'+this.accountNum+'</td>'
 					+'<td id = "u'+i+'">'+this.userid+'</td>'
-					+'<td id = "u'+i+'">'+this.bookid+'</td>';
+					+'<td id = "b'+i+'">'+this.bookid+'</td>';
 					arr.push(this.purNum);
 				});
 				$(table).appendTo($('#pur_wrap').empty());
