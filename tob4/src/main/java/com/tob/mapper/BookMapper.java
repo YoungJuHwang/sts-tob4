@@ -16,6 +16,7 @@ public interface BookMapper {
 	 
 	public List<BookVO> selectAll(Command command);
 	
-	public int amountBook();  // 책 수량 <count>
+	
+	public int count();
 
 }
