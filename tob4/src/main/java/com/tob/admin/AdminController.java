@@ -132,7 +132,7 @@ public class AdminController {
 		logger.info("AdminController bookList()");
 		logger.info("넘어온 페이지번호 : {}",pageNo);
 		Map<String,Object> map = new HashMap<String,Object>();
-		/*map.put("list", bookService.selectAll(CommandFactory.list(pageNo)));*/
+		map.put("list", bookService.selectAll(CommandFactory.list(pageNo)));
 		map.put("count", count);
 		map.put("totalPage", totalPage);
 		map.put("pageNo", pageNumber);
