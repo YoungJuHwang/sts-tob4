@@ -25,6 +25,7 @@
 		</div>
 	</div>
 <script src="${js}/purchase.js"></script>
+<script src="${js}/cart.js"></script>
 
 </body>
 </html>

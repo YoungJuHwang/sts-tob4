@@ -61,11 +61,11 @@
             <div class="col-lg-8 col-lg-offset-2" style="width: 100%; margin: auto;">
             
                 <hr />
-                  <img src="${img}/bstseller.png" alt="" />
+                  <img src="${img}/bstseller.png" alt="" style="padding-top: 20px;"/>
                   <!-- 베스트셀러 시작 -->
 			
 
-				<div  style="margin: auto; border: 1px solid silver; width: 100%;">
+				<div  style="margin: auto; width: 100%;">
 					<div class="col-xs-6 col-md-3">
 						<a href="#" class="thumbnail"> 
 						<img src="${img}/bstbook1.jpg" alt="지금 이 순간" style="width: 141px; height: 203px;">
@@ -161,7 +161,7 @@
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2" style="width: 100%; margin: auto;">
                 <hr />
-                <img src="${img}/reco.png" alt="" />
+                <img src="${img}/reco.png" alt="" style="padding-top: 20px;"/>
                  <!-- 분야 추천 -->
                   	<div class="row" >
 					<div class="col-xs-6 col-md-3" >
@@ -211,6 +211,48 @@
 						style="width: 141px; height: 203px;">
 						</a>
 					</div>
+					<div class="col-xs-6 col-md-3" >
+					<a href="#" class="thumbnail"> 
+						<img src="${img}/recome10.jpg" alt="Hello2016" 
+						style="width: 141px; height: 203px;">
+						</a>
+					</div>
+					<div class="col-xs-6 col-md-3" >
+					<a href="#" class="thumbnail"> 
+						<img src="${img}/recome11.jpg" alt="부의 방정식" 
+						style="width: 141px; height: 203px;">
+						</a>
+					</div>
+					<div class="col-xs-6 col-md-3" >
+					<a href="#" class="thumbnail"> 
+						<img src="${img}/recome12.jpg" alt="한국이 열광할 12가지 트렌드" 
+						style="width: 141px; height: 203px;">
+						</a>
+					</div>
+						<div class="col-xs-6 col-md-3" >
+					<a href="#" class="thumbnail"> 
+						<img src="${img}/recome13.jpg" alt="세상물정의 경제학" 
+						style="width: 141px; height: 203px;">
+						</a>
+					</div>
+						<div class="col-xs-6 col-md-3" >
+					<a href="#" class="thumbnail"> 
+						<img src="${img}/recome14.jpg" alt="전복과 반전의 순간" 
+						style="width: 141px; height: 203px;">
+						</a>
+					</div>
+						<div class="col-xs-6 col-md-3" >
+					<a href="#" class="thumbnail"> 
+						<img src="${img}/recome15.jpg" alt="프랑스 컬러링 여행" 
+						style="width: 141px; height: 203px;">
+						</a>
+					</div>
+					<div class="col-xs-6 col-md-3" >
+					<a href="#" class="thumbnail"> 
+						<img src="${img}/recome16.jpg" alt="유럽의 첫번째 태양 스페인" 
+						style="width: 141px; height: 203px;">
+						</a>
+					</div>
 					</div>
 					</div>
                   <!-- 끝 -->
@@ -222,47 +264,44 @@
     <!-- Contact Section -->
     <section id="contact" class="container content-section ">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2" style="margin: auto; width: 100%;">
-                <img src="${img}/week.png" alt="" /><img src="${img}/icon_ad3.gif" alt="" />
-                <div class="row" >
-						<div class="col-xs-6 col-md-3" >
-						<a href="#" class="thumbnail"> 
-						<img src="${img}/weekday1.jpg" alt="참 좋은 당신을 만났습니다." style="width: 141px; height: 203px;">
-						</a>
-					</div>
-					<div class="col-xs-6 col-md-3" >
-					<a href="#" class="thumbnail"> 
-						<img src="${img}/weekday2.jpg" alt="나는 이제 좀 행복해져야겠다." style="width: 141px; height: 203px;">
+			<div class="col-lg-8 col-lg-offset-2"
+				style="margin: auto; width: 100%; border: 1px solid #E6E6FA;">
+				<img src="${img}/week.png" alt="" style="padding-top: 20px;" /><img
+					src="${img}/icon_ad3.gif" alt="" />
+				<div class="row">
+					<div class="col-xs-6 col-md-3">
+						<a href="#" class="thumbnail"> <img src="${img}/weekday1.jpg"
+							alt="참 좋은 당신을 만났습니다." style="width: 141px; height: 203px;">
 						</a>
 					</div>
 					<div class="col-xs-6 col-md-3">
-						<a href="#" class="thumbnail"> 
-						<img src="${img}/weekday3.jpg" alt="내 스물아홉 이야기" style="width: 141px; height: 203px;">
+						<a href="#" class="thumbnail"> <img src="${img}/weekday2.jpg"
+							alt="나는 이제 좀 행복해져야겠다." style="width: 141px; height: 203px;">
 						</a>
 					</div>
 					<div class="col-xs-6 col-md-3">
-					<a href="#" class="thumbnail"> 
-						<img src="${img}/weekday4.jpg" alt="괜찮아, 괜찮아 그래도 괜찮아." style="width: 141px; height: 203px;">
-						</a>
-					</div>
-					<div class="col-xs-6 col-md-3" >
-					<a href="#" class="thumbnail"> 
-						<img src="${img}/weekday5.jpg" alt="마음의 눈에만 보이는 것들" style="width: 141px; height: 203px;">
+						<a href="#" class="thumbnail"> <img src="${img}/weekday3.jpg"
+							alt="내 스물아홉 이야기" style="width: 141px; height: 203px;">
 						</a>
 					</div>
 					<div class="col-xs-6 col-md-3">
-						<a href="#" class="thumbnail"> 
-						<img src="${img}/weekday6.jpg" alt="시드니" style="width: 141px; height: 203px;">
+						<a href="#" class="thumbnail"> <img src="${img}/weekday4.jpg"
+							alt="괜찮아, 괜찮아 그래도 괜찮아." style="width: 141px; height: 203px;">
 						</a>
 					</div>
-					</div>
-                <ul class="list-inline banner-social-buttons" style="text-align: center;">
+
+				</div>
+
+			</div>
+
+
+			<ul class="list-inline banner-social-buttons" style="text-align: center;">
                     <li>
                     <a href="https://twitter.com/">
                     <img src="${img}/to_sns.png" />     </a>
                     </li>
                 </ul>
-            </div>
+     
         </div>
     </section>
    
