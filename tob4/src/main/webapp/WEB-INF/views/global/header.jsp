@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<style>@IMPORT url("${context}/resources/css/magnific-popup.css");</style>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
 
-<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.1/jquery.magnific-popup.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.1/magnific-popup.css" />
 
 
 <title>Hanbit - words</title>
@@ -48,8 +47,8 @@
 	<jsp:include page="../member/Join.jsp"></jsp:include>
 
 </div>
-
-<script type="text/javascript">
+<!-- 
+ <script type="text/javascript">
 	$(function() {
 		$('#join').magnificPopup({
 			type : 'inline',
@@ -65,4 +64,4 @@
 			$.magnificPopup.close();
 		});
 	});
-</script>
+</script>  -->
