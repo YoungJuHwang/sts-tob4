@@ -61,18 +61,21 @@
 </div>
 <script type="text/javascript">
 	$(function() {
-		$('#join').magnificPopup({
+		/* $('#join').magnificPopup({
 			type : 'inline',
 			preloader : false,
 			modal : true,
 			closeContentPos : true,
 			fixedContentPos: true,
-	        alignTop: false, /* 최상단위치 */
+	        alignTop: false, 최상단위치 
 			showCloseBtn: true
 		});
 		$(document).on('click','.popupClose',function(e){
 			e.preventDefault();
 			$.magnificPopup.close();
+		}); */
+		$('#btn_pur').click(function() {
+			
 		});
 		$('#btn_cart').click(function() {
 			alert('장바구니 버튼 클릭');
