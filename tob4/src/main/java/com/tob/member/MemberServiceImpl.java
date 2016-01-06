@@ -69,7 +69,7 @@ public class MemberServiceImpl implements MemberService{
 		public List<MemberVO> getList(Command command) {
 			logger.info("MemberServiceImpl : getList");
 			MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
-			return mapper.getList(command);
+			return mapper.selectAll(command);
 		}
 		@Override
 		public int changePwd(MemberVO member) {
