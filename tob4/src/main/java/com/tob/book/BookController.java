@@ -16,7 +16,7 @@ public class BookController {
 	@RequestMapping("/Book")
 	public String book(){
 		logger.info("BookController:Book()");
-		return "book/main.tiles";
+		return "book/main.tiles"; 
 				
 	}
 	
