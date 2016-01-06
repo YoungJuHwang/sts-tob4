@@ -6,7 +6,7 @@ import com.tob.cart.CartVO;
 
 public interface CartMapper {
 		// C
-		public int put(CartVO o);
+		public int put(String bookid);
 		
 		//R
 		public List<CartVO> getList();

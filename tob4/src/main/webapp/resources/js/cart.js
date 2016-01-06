@@ -19,6 +19,8 @@ var Cart = {
 				table += '<button id="order">주문하기</button>';
 			$(table).appendTo($('#cart_wrap').empty());
 		});
+	},
+	put : function(bookid) {
 		
 	}
 };

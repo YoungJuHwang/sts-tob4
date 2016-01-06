@@ -5,7 +5,7 @@ import java.util.List;
 public interface CartService {
 	
 	// 장바구니 담기
-	public int put(CartVO o);
+	public int put(String bookid);
 	
 	// 장바구니 목록 확인
 	public List<CartVO> getList();

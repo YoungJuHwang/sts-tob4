@@ -1,7 +1,7 @@
 var book = {
 		/*책 전체목록*/
 		all : function() {
-			$('#book').html('<div class="wrap auto"><div class="mainn"></div><div class="alpha"><font color="red"><strong>국내도서</strong></font><br /><p><p>'
+			$('.mainView').html('<div class="wrap auto"><div class="mainn"></div><div class="alpha"><font color="red"><strong>국내도서</strong></font><br /><p><p>'
 					+'<a href="#" id="social" value="social">social</a><br /><p><a href=""><font>자기계발</font></a><br /><p><a href=""><font>컴퓨터</font></a><br /><p>'
 					+'<font>베스트셀러</font><br /><p><font>이달의 책</font><br /><p><font>키위밍</font><br /><p><font>월페이퍼</font><br /><p><font>이벤트</font><br />'
 					+'<p><font>예약판매</font><br /><p></div>'
@@ -137,19 +137,9 @@ var book = {
 			});
 		},
 		
-		
-			
-		
-		
-		
-		
-		
-		
-		
-		
 		/*비우기*/
 		bookEmpty : function() {
-			$('').appendTo($('#book').empty());
+			$('').appendTo($('.mainview').empty());
 		},
 		
 		/*실험용 알러트*/

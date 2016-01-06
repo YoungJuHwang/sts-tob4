@@ -10,19 +10,24 @@ var Purchase = {
 					+'<table id="pur_list"><tr><th>주문번호</th><th>합계</th><th>어카운트 넘버</th>'
 					+'<th>주문한 아이디</th><th>주문한 책 이름</th></tr>';
 				$.each(data, function(i, val) {
-					table +='<tr><td><a href="#" id="'+this.purNum+'">'+this.purNum+'</a></td>'
-					+'<td>'+this.sum+'</td>'
-					+'<td>'+this.accountNum+'</td>'
+					table +='<tr><td>'+this.purNum+'</td>'
+					+'<td id = s'+i'>'+this.sum+'</td>'
+					+'<td id = a'+i'>'+this.accountNum+'</td>'
 					+'<td>'+this.userid+'</td>'
 					+'<td>'+this.bookid+'</td>'
-					+'<td><button id="'+this.purNum+'">삭제</button><td></tr>';
+					+'<td><a href="#" id="'+this.purNum+'">삭제</a></td>';
 					arr.push(this.purNum);
 				});
-				$(table).appendTo($('#pur_wrap').empty());
+				$('#pur_wrap').empty().append(table);
 				
 				$.each(data, function(i, val) {
 					$('#'+arr[i]).click(function() {
-						alert('클릭한 주문번호 : '+arr[i]);
+						alert('삭제 버튼 먹음');
+					});
+				});
+				$.each(data, function(i, val) {
+					$('#s'+i).click(function() {
+						Cart.put(bookid);
 					});
 				});
 				
