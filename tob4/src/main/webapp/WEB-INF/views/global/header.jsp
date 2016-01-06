@@ -1,7 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.1/jquery.magnific-popup.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.1/magnific-popup.css" />
+
 
 <title>Hanbit - words</title>
 
@@ -35,21 +39,40 @@
 		
 		<li style="float: right"><a href="${context}/admin/main"><span class="glyphicon glyphicon-user"></span>관리자</a></li>
 		<li style="float: right"><a href="${context}/member/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-		<li style="float: right"><a href="${context}/member/Join">Join</a></li>
+		<li style="float: right"><a href="#joinForm" id="join">Join</a></li>
 		</c:if>
 		<c:if test="${not empty sessionScope.user}">
 		<li style="float: right;">${user.name}님 반갑습니다.</li>
 		<li style="float: right;"><a href="${context}/member/mypage">마이페이지</a></li>
 		<li style="float: right;"><input id="btn_logout" type="submit" name="submit" value="로그아웃" /></li>
 		</c:if>
+		
+	
 	</ul>
 	</div>
 </div>
+
+<div id="joinForm" class="white-popup-block mfp-hide" 
+	style='background-color: white; margin : 0 auto;'>
+	<!-- <h1>모달 테스트</h1>
+	 -->
+	<jsp:include page="../member/Join.jsp"></jsp:include>
+
+</div>
 <script type="text/javascript">
 	$(function() {
-		$('#btn_pur').click(function() {
-			alert('구매버튼 클릭');
-			Purchase.main(context);
+		$('#join').magnificPopup({
+			type : 'inline',
+			preloader : false,
+			modal : true,
+			closeContentPos : true,
+			fixedContentPos: true,
+	        alignTop: false, /* 최상단위치 */
+			showCloseBtn: true
+		});
+		$(document).on('click','.popupClose',function(e){
+			e.preventDefault();
+			$.magnificPopup.close();
 		});
 		$('#btn_cart').click(function() {
 			alert('장바구니 버튼 클릭');

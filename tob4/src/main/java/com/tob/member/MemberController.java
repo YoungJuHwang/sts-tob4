@@ -67,7 +67,7 @@ public class MemberController {
         }
         return model;
     }
-    @RequestMapping(value="/login",method=RequestMethod.POST)
+    @RequestMapping("/login")
     public @ResponseBody MemberVO login(@RequestBody MemberVO param,Model model){
         logger.info("멤버컨트롤러 login() - 진입");
         logger.info("넘어온 유저아이디 : {}",param.getUserid());
