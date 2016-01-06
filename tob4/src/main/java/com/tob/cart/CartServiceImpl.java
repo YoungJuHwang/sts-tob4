@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.tob.book.BookVO;
 import com.tob.mapper.CartMapper;
 
 @Service
@@ -16,7 +17,7 @@ public class CartServiceImpl implements CartService {
 	@Autowired private SqlSession sqlSession;
 	
 	@Override
-	public int put(String bookid) {
+	public CartVO put(String bookid) {
 		logger.info("CartServiceImpl : regist 진입");
 		CartMapper mapper = sqlSession.getMapper(CartMapper.class);
 		return mapper.put(bookid);
@@ -27,7 +28,12 @@ public class CartServiceImpl implements CartService {
 		CartMapper mapper = sqlSession.getMapper(CartMapper.class);
 		return mapper.getList();
 	}
-
+	@Override
+	public BookVO searchBybookid(String bookid) {
+		logger.info("CartServiceImpl : searchBybookid 진입");
+		CartMapper mapper = sqlSession.getMapper(CartMapper.class);
+		return mapper.searchBybookid(bookid);
+	}
 	@Override
 	public int remove(String bookid) {
 		logger.info("CartServiceImpl : remove 진입");
@@ -40,6 +46,7 @@ public class CartServiceImpl implements CartService {
 		CartMapper mapper = sqlSession.getMapper(CartMapper.class);
 		return mapper.changeCount(count);
 	}
+	
 	
 	
 }
