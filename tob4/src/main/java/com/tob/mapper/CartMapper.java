@@ -5,8 +5,8 @@ import java.util.List;
 import com.tob.cart.CartVO;
 
 public interface CartMapper {
-	// C
-		public int regist(CartVO o);
+		// C
+		public int put(CartVO o);
 		
 		//R
 		public List<CartVO> getList();

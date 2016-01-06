@@ -16,10 +16,10 @@ public class CartServiceImpl implements CartService {
 	@Autowired private SqlSession sqlSession;
 	
 	@Override
-	public int regist(CartVO o) {
+	public int put(CartVO o) {
 		logger.info("CartServiceImpl : regist 진입");
 		CartMapper mapper = sqlSession.getMapper(CartMapper.class);
-		return mapper.regist(o);
+		return mapper.put(o);
 	}
 	@Override
 	public List<CartVO> getList() {

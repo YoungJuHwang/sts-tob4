@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface CartService {
 	// C
-	public int regist(CartVO o);
+	public int put(CartVO o);
 	
 	//R
 	public List<CartVO> getList();
