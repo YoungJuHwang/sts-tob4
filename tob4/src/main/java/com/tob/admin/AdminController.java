@@ -118,7 +118,7 @@ public class AdminController {
 		int pageNumber = Integer.parseInt(pageNo);
 		int pageSize = 5;
 		int groupSize = 3;
-		int count = bookService.amountBook();
+		int count = bookService.count();
 		int totalPage = count/pageSize;
 		if (count%pageSize != 0) {
 			totalPage += 1;

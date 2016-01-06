@@ -13,9 +13,10 @@ var Cart = {
 				table +='<tr><td><a href="#" id="'+this.cartNum+'">'+this.cartNum+'</a></td>'
 				+'<td id = "s'+i+'">'+this.bookid+'</td>'
 				+'<td id = "a'+i+'">'+this.userid+'</td>'
-				+'<td id = "u'+i+'">'+this.count+'</td>';
+				+'<td id = "u'+i+'">'+this.count+'</td>'
 				arr.push(this.purNum);
 			});
+				table += '<button id="order">주문하기</button>';
 			$(table).appendTo($('#cart_wrap').empty());
 		});
 		

@@ -21,7 +21,7 @@ var Purchase = {
 				$(table).appendTo($('#pur_wrap').empty());
 				$.each(data, function(i, val) {
 					$('#'+arr[i]).click(function() {
-						Purchase.remove(arr[i]);
+						alert('클릭한 주문번호 : '+arr[i]);
 					});
 				});
 				
