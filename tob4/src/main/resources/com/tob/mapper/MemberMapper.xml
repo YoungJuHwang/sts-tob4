@@ -13,7 +13,7 @@
 	 	EMAIL AS email,
 	 	PHONE AS phone,
 	 	ADDR AS addr
- 		FROM MEMBER ORDER BY userid DESC
+ 		FROM MEMBER ORDER BY userid ASC
          LIMIT #{start}, 3
  </select>
  <select id="selectSomeBy" resultType="com.tob.member.MemberVO" parameterType="com.tob.global.Command">
@@ -27,7 +27,7 @@
 	 	PHONE AS phone,
 	 	ADDR AS addr
  		FROM MEMBER WHERE ${column} LIKE CONCAT('%',#{keyword},'%')
-        ORDER BY userid DESC LIMIT #{start}, 3
+        ORDER BY userid DESC LIMIT #{start}, 2
  </select>
  <select id="selectOneBy" resultType="com.tob.member.MemberVO" parameterType="string">
  	SELECT
