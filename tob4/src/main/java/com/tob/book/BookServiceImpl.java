@@ -25,17 +25,13 @@ public int registration(BookVO o) {
 
 
 
-@Override  /*책 재고수량*/
-public int amountBook() {
-	BookMapper mapper = sqlSession.getMapper(BookMapper.class);
-	return mapper.amountBook();
-}
+
 
 
 @Override /*책 삭제*/
 public int delete(String book) {
 	BookMapper mapper = sqlSession.getMapper(BookMapper.class);
-	return mapper.amountBook();
+	return mapper.delete(book);
 }
 
 
@@ -62,6 +58,14 @@ public List<BookVO> selectAll(Command command) {
 public int change(BookVO book) {
 	BookMapper mapper = sqlSession.getMapper(BookMapper.class);
 	return mapper.update(book);
+}
+
+
+
+public int count() {
+	logger.info("BookServiceImpl : count");
+	BookMapper mapper = sqlSession.getMapper(BookMapper.class);
+	return mapper.count();
 }
 
 

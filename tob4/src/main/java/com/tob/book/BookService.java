@@ -18,7 +18,7 @@ public interface BookService {
 	
 	
 	//총 재고량.
-	public int amountBook();
+	public int count();
 	
 	
 	// 전체 책 목록
