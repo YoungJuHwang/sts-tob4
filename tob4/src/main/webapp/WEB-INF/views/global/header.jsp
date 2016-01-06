@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<style>@IMPORT url("${context}/resources/css/magnific-popup.css");</style>
 <link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<style>@IMPORT url("${context}/resources/css/magnific-popup.css");</style>
+<script	src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.1/jquery.magnific-popup.js"></script>
+
 <title>Hanbit - words</title>
 
 <!-- Header -->
@@ -44,17 +46,17 @@
 	<jsp:include page="../member/Join.jsp"></jsp:include>
 
 </div>
-<script src="${context}/resources/js/magnific-popup.js"></script>
+
 <script type="text/javascript">
 	$(function() {
 		$('#btn_pur').click(function() {
 			alert('구매버튼 클릭');
 			Purchase.main(context);
 		});
+		
 		$('#join').magnificPopup({
 			type : 'inline',
 			preloader : false,
-			focus : '#username',
 			modal : true,
 			closeContentPos : true,
 			fixedContentPos: true,
