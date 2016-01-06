@@ -17,7 +17,8 @@
 			PUR_NUM AS purNum,
 			SUM AS sum,
 			ACCOUNT_NUM AS accNum,
-			USERID AS userid
+			USERID AS userid,
+			BOOK_ID AS bookid
 		FROM PURCHASE
 	</select>
 	<update id="change">
