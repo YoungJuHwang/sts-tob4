@@ -1,24 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <h1>전체 회원 목록 페이지</h1>
+
 <script type="text/javascript">
 $(function() {
-	alert("멤버리스트 ready");
-	Admin.memberList('1');
+	AdminMemberList.list('1');
 });
 
-var Admin = {
-		 memberList : function(pageNo) {
+var AdminMemberList = {
+		 list : function(pageNo) {
 			 
 				$.getJSON(context+'/admin/member_list/'+pageNo ,function(data) {
-					alert("겟 제이슨 들어갔네");
 					var count = data.count;
 					var pageNo = data.pageNo; 
 					var startPage = data.startPage;
 					var groupSize = data.groupSize;
 					var lastPage = data.lastPage;
-					var totPage = data.totPage;
-					var table = "<div id='boardList'><h1 align=center style='color:white;margin-bottom:30px'>회원목록</h1>"
-					+"<TABLE id='tab_boardList'>"
+					var totalPage = data.totalPage;
+					var table = "<div id='memberList'><h1 align=center style='color:black;margin-bottom:30px'>회원목록</h1>"
+					+"<TABLE id='tab_memberList'>"
 					+"<TR ALIGN=CENTER><TD WIDTH=10%><B>번호</B></TD>"
 					+"<TD WIDTH=20%><B>아이디</B></TD>"
 					+"<TD WIDTH=20%><B>회원명</B></TD>"
@@ -27,7 +26,7 @@ var Admin = {
 				   
 					$.each(data.list, function(index, value) {
 				 table +="<TR><TD WIDTH=10% ALIGN=CENTER>"+(index+1)+"</TD>"
-						+"<TD WIDTH=20% ALIGN=CENTER>"+this.id+"</TD>"
+						+"<TD WIDTH=20% ALIGN=CENTER>"+this.userid+"</TD>"
 						+"<TD WIDTH=20% ALIGN=CENTER><A HREF='BoardContent.jsp'>"+this.name+"</A></TD>"
 						+"<TD WIDTH=30% ALIGN=LEFT>"+this.phone+"</TD>"
 						+"<TD WIDTH=18% ALIGN=CENTER>"+this.addr+"</TD></TR>"
@@ -37,45 +36,45 @@ var Admin = {
 					
 					var pagination ='<TABLE id="pagination">'
 					+'<TR>'
-					+'<TD ALIGN=LEFT WIDTH=100>'
-					+'<IMG SRC="${img}/btn_new.gif" onClick=""; STYLE=CURSOR:HAND>'
 					+'</TD>'
 					+'<TD WIDTH=320 ALIGN=CENTER>';
-					if (startPage != 1) {
-						pagination += '<a href="#" onclick="return Admin2.memberList(1)">'
-						+'<IMG SRC="'+img+'/btn_bf_block.gif">&nbsp;'
-						+'</a>'
-					}
-					if ((startPage - groupSize) > 0 ) {
-						pagination += '<a href="#" onclick="return Admin2.memberList('+(startPage- groupSize)+')">'
-						+'<IMG SRC="'+img+'/btn_bf_page.gif">&nbsp;'
-						+'</a>'
-					}
 
-					for (var i = startPage; i < lastPage; i++) {
-						if (i == pageNo) {
-							pagination += '<font style="color: red; font-size: 20px">'
-							+i
-							+"</font>"
-						} else {
-							pagination += '<a href="#" onclick="return Admin2.memberList('+i+')">'
-							+'<font>'
-							+i
-							+'</font>'
-							+'</a>'
-						}	
+					if (startPage != 1) {
+						pagination += 
+						'<a href="#" onclick="AdminMemberList.list(1)">'
+						+'<IMG SRC="${img}/admin/btn_bf_block.gif">&nbsp;'
+						+'</a>'
+						+'<a href="#" onclick="AdminMemberList.list('+(startPage-groupSize)+')">'
+						+'<IMG SRC="${img}/admin/btn_bf_page.gif">&nbsp;'
+						+'</a>'
 					}
 					
-					if ((startPage + groupSize) <= totPage) {
-						pagination += '<a href="#" onclick="return Admin2.memberList('+(startPage+groupSize)+')">'
-						+'<IMG SRC="'+img+'/btn_nxt_page.gif">&nbsp;'
-						+'</a>'	
+					for (var i = startPage; i <= lastPage; i++) {
+						if (i == pageNo ) {
+							pagination +=
+								'<font style="color:red;font-size: 20px">'+i+'</font>';
+						} else {
+							pagination +=
+								'<a href="#" onclick="AdminMemberList.list('+i+')">'
+								+'<font>'+i+'</font>'
+								+'</a>';
+						}
+					}
+					
+					if (lastPage != totalPage) {
+						pagination +=
+						    '<a href="#" onclick="AdminMemberList.list('+(startPage + groupSize)+')">'
+		    	            +'<IMG SRC=" ${img}/admin/btn_nxt_page.gif"> &nbsp;'
+		           			+'</a>'
+		           			+'<a href="#" onclick="AdminMemberList.list('+(totalPage - ((totalPage-1) % groupSize))+')">'
+		                	+'<IMG SRC=" ${img}/admin/btn_nxt_block.gif"> &nbsp;'
+		           			+'</a>';
 					}
 					pagination +='</TD>';
 					
 					
 					pagination += '<TD WIDTH=200 ALIGN=RIGHT>'
-					+'<FORM NAME="memberSearch" action="'+context+'/event/memberSearch/1" style="color: black">'
+					+'<FORM NAME="memberSearch" action="'+context+'/admin/memberSearch/1" style="color: black">'
 					+'<SELECT NAME="column" SIZE=1>'
 					+'<OPTION VALUE="" SELECTED>선택'
 					+'</OPTION>'
@@ -94,11 +93,24 @@ var Admin = {
 					+'</TABLE>';
 					
 					table += pagination;
-					$('#content').html(table);
+					$('.mainView').html(table);
+					
+					AdminMemberList.style();
 					
 				});
 
 		},
+		
+		style : function(){
+			$('#tab_memberList').css('width','70%').css('height','50px')
+			.css('margin','auto').css('border','1px solid black')
+			.css('CELLSPACING','0').css('CELLPADDING','1px').css('ALIGN','CENTER');
+			$('td').add('th').css('text-align','center').css('border','1px solid black').css('background-color','white');
+			$('tr').add('th').add('td').css('float','center').css('color','black').css('border','1px solid black');
+			
+
+		},
+		
 		
 		 
 	memberNotExist : function() {
