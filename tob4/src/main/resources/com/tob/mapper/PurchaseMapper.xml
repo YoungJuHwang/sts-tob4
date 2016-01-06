@@ -3,5 +3,28 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
 <mapper namespace="com.tob.mapper.PurchaseMapper">
-
+	<insert id="add">
+	
+	</insert>
+	<select id="searchBypurNum">
+	
+	</select>
+	<select id="searchByAccNum">
+	
+	</select>
+	<select id="getList" resultType="com.tob.purchase.PurchaseVO">
+		SELECT
+			PUR_NUM AS purNum,
+			SUM AS sum,
+			ACCOUNT_NUM AS accNum.
+			USERID AS userid
+		FROM PURCHASE
+	</select>
+	<update id="change">
+	
+	</update>
+	<delete id="remove">
+	
+	</delete>
+	
 </mapper>

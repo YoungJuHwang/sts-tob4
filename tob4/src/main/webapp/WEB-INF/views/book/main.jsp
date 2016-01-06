@@ -2,7 +2,7 @@
 
 <div id="book"></div>
 
-<script src="${js}/book/Book.js"></script>
+<script src="${js}/Book.js"></script>
 
 
 <script type="text/javascript">

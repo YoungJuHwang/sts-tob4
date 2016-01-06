@@ -8,10 +8,7 @@ import com.tob.purchase.PurchaseVO;
 
 @Repository
 public interface PurchaseMapper {
-	
-	
-	
-	// 주문내역 추가
+		// 주문내역 추가
 		public int add(PurchaseVO o);
 		
 		// 주문내역 (주문번호로) 조회

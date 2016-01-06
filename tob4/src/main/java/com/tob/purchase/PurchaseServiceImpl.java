@@ -42,7 +42,7 @@ public class PurchaseServiceImpl implements PurchaseService{
 		PurchaseMapper mapper = sqlSession.getMapper(PurchaseMapper.class);
 		List<PurchaseVO> list = mapper.getList();
 		logger.info("getList 리턴값 : {}",list);
-		return mapper.getList();
+		return list;
 	}
 	@Override
 	public int change(PurchaseVO o) {
