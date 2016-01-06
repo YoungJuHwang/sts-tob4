@@ -25,7 +25,8 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">회원관리 <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="${context}/admin/member_reg">회원 등록</a></li>
+            <li><a href="${context}/admin/member_reg">회원 및 관리자 등록</a></li>
+            <%-- <li><a href="${context}/admin/member_reg3">회원 등록3</a></li> --%>
             <li><a href="${context}/admin/member_list">전체 회원 목록</a></li>
           </ul>
         </li>	   

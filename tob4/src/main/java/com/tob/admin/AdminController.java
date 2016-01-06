@@ -38,6 +38,7 @@ public class AdminController {
 	@RequestMapping("/main")
 	public String home(){
 		logger.info("AdminController-home() 진입");
+		logger.info("Admin");
 		return "admin/admin/main.tiles";
 	}
 	
@@ -47,6 +48,11 @@ public class AdminController {
 		return "admin/admin/memberReg.tiles";
 	}
 	
+	@RequestMapping("/member_reg3")
+	public String memberReg3(){
+		logger.info("AdminController-memberReg3() 진입");
+		return "admin/admin/memberReg3.tiles";
+	}
 	
 	@RequestMapping("/member_list")
 	public String memberList(){
@@ -59,7 +65,7 @@ public class AdminController {
 			@PathVariable("pageNo")String pageNo,
 			Model model){
 		
-		logger.info("AdminController memberList() Ajax진입");
+		logger.info("AdminController memberList() 진입");
 		logger.info("넘어온 페이지번호 : {}",pageNo);
 		
 		int pageNumber = Integer.parseInt(pageNo);
@@ -92,7 +98,7 @@ public class AdminController {
 
 	
 	@RequestMapping("/book_reg")
-	public String bookreg(){
+	public String bookReg(){
 		logger.info("AdminController-bookreg() 진입");
 		return "admin/admin/bookReg.tiles";
 	}
