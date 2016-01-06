@@ -22,6 +22,7 @@
 	<ul class="nav navbar-nav"	style="padding-bottom: 5px; margin: 0 auto; width: 100%">
 		<li style="padding-right: 100px;"><a
 			href="${context}/main/Home"><b>HOME</b></a></li>
+		<li style="padding-right: 100px;"><a href="${context}/global/intro"><b>INFO</b></a></li>
 		<li style="padding-right: 100px;"><a
 			href="${context}/book/Book"><b>BOOK</b></a></li>    
 		<li style="padding-right: 100px;">
