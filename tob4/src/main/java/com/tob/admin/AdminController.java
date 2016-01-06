@@ -65,14 +65,14 @@ public class AdminController {
 			@PathVariable("pageNo")String pageNo,
 			Model model){
 		
-		logger.info("AdminController memberList() 진입");
+		logger.info("AdminController memberList()");
 		logger.info("넘어온 페이지번호 : {}",pageNo);
-		
+
 		int pageNumber = Integer.parseInt(pageNo);
-		int pageSize = 5;
+		int pageSize = 3;
 		int groupSize = 3;
 		int count = memberService.count();
-		logger.info("넘어온 카운트 : {}",count);
+		
 		int totalPage = count/pageSize;
 		if (count%pageSize != 0) {
 			totalPage += 1;
@@ -83,15 +83,16 @@ public class AdminController {
 			lastPage = totalPage;
 		}
 		
-		
+		logger.info("라스트페이지:{}",lastPage);
 		Map<String,Object> map = new HashMap<String,Object>();
 		map.put("list", memberService.getList(CommandFactory.list(pageNo)));
-		map.put("count", count);
-		map.put("totalPage", totalPage);
-		map.put("pageNo", pageNumber);
+		map.put("count", memberService.count());
+		map.put("pageNo", pageNo);
 		map.put("startPage", startPage);
-		map.put("lastPage", lastPage);
 		map.put("groupSize", groupSize);
+		map.put("lastPage", lastPage);
+		map.put("totalPage", totalPage);
+
 		return map;
 	}
 	
