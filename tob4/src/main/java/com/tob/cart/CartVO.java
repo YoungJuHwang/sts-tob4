@@ -4,32 +4,34 @@ import org.springframework.stereotype.Component;
   
 @Component
 public class CartVO {
-	private String bookId;
-	private String purNum;
+	private String cartNum;
+	private String bookid;
 	private String userid;
-	private int count;
-	public String getBookId() {
-		return bookId;
+	private String count;
+	
+	
+	public String getCartNum() {
+		return cartNum;
 	}
-	public String getPurNum() {
-		return purNum;
+	public String getBookid() {
+		return bookid;
 	}
 	public String getUserid() {
 		return userid;
 	}
-	public int getCount() {
+	public String getCount() {
 		return count;
 	}
-	public void setBookId(String bookId) {
-		this.bookId = bookId;
+	public void setCartNum(String cartNum) {
+		this.cartNum = cartNum;
 	}
-	public void setPurNum(String purNum) {
-		this.purNum = purNum;
+	public void setBookid(String bookid) {
+		this.bookid = bookid;
 	}
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}
-	public void setCount(int count) {
+	public void setCount(String count) {
 		this.count = count;
 	}
 	

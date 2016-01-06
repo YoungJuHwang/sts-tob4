@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -32,10 +33,12 @@ public class PurchaseController {
 		return list;
 	}
 	
-	@RequestMapping("/remove")
-	public String remove(){
+	@RequestMapping("/remove/{purNum}")
+	public String remove(
+			@PathVariable("purNum")String purNum
+			){
 		logger.info("구매 컨트롤러 - remove() 진입");
-		String purNum = "몰라";
+		logger.info("넘어온 주문번호 : {}", purNum);
 		int result = service.remove(purNum);
 		return "삭제완료";
 	}

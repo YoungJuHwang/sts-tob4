@@ -16,7 +16,7 @@
 		SELECT
 			PUR_NUM AS purNum,
 			SUM AS sum,
-			ACCOUNT_NUM AS accNum,
+			ACCOUNT_NUM AS accountNum,
 			USERID AS userid,
 			BOOK_ID AS bookid
 		FROM PURCHASE
@@ -25,7 +25,7 @@
 	
 	</update>
 	<delete id="remove">
-	
+		DELETE FROM PURCHASE WHERE CART_NUM = ${cartNum}
 	</delete>
 	
 </mapper>

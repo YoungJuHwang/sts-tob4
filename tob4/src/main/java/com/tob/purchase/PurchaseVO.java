@@ -8,6 +8,14 @@ public class PurchaseVO {
 	private String sum;
 	private String accountNum;
 	private String userid;
+	private String bookid;
+	
+	public String getBookid() {
+		return bookid;
+	}
+	public void setBookid(String bookid) {
+		this.bookid = bookid;
+	}
 	public String getPurNum() {
 		return purNum;
 	}

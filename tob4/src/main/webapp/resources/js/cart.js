@@ -16,6 +16,7 @@ var Cart = {
 				+'<td id = "u'+i+'">'+this.count+'</td>';
 				arr.push(this.purNum);
 			});
+			$(table).appendTo($('#cart_wrap').empty());
 		});
 		
 	}
