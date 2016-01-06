@@ -2,56 +2,109 @@
 <div style="margin: auto;">
 
 
+<div style="margin: 20px; ">
+
+	<div class="slider-box">
+		<div class="col-lg-12 text-center">
+			<div id="carousel-example-generic" class="carousel slide">
+				<!-- Indicators -->
+				<ol class="carousel-indicators hidden-xs">
+					<li data-target="#carousel-example-generic" data-slide-to="0"
+						class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="4"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="5"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" style="height: 400px; width: 100%;">
+					<div class="item active">
+						<img class="img-responsive img-full" style="height: 100%; width: 100%;"
+							src="${img}/main-slider1.jpg" alt="">
+					</div>
+					<div class="item">
+						<img class="img-responsive img-full" style="height: 100%; width: 100%;"
+							src="${img}/main-slider2.jpg" alt="">
+					</div>
+					<div class="item">
+						<img class="img-responsive img-full" style="height: 100%; width: 100%;"
+							src="${img}/main-slider3.jpg" alt="">
+					</div>
+					<div class="item">
+						<img class="img-responsive img-full" style="height: 100%; width: 100%;"
+							src="${img}/main-slider4.jpg" alt="">
+					</div>
+					<div class="item">
+						<img class="img-responsive img-full" style="height: 100%; width: 100%;"
+							src="${img}/main-slider5.jpeg" alt="">
+					</div>
+					
+					<!-- Controls -->
+				<a class="left carousel-control" href="#carousel-example-generic"
+					data-slide="prev"> <span class="icon-prev"></span>
+				</a> <a class="right carousel-control" href="#carousel-example-generic"
+					data-slide="next"> <span class="icon-next"></span>
+				</a>
+			</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
     <!-- About Section -->
-    <section id="about" class="container content-section text-center">
+    <section id="about" class="container content-section">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-            <img src="${context}/resources/images/info.jpg" style="width: 100%;" />
+            
                 <hr />
-                  <h3>베스트셀러</h3>
+                  <img src="${img}/bstseller.png" alt="" />
                   <!-- 베스트셀러 시작 -->
 			
 
 				<div class="row" style="margin: auto; border: 1px solid silver;">
 					<div class="col-xs-6 col-md-3">
 						<a href="#" class="thumbnail"> 
-						<img src="${img}/bstbook1.jpg" alt="지금 이 순간">
+						<img src="${img}/bstbook1.jpg" alt="지금 이 순간" style="width: 141px; height: 203px;">
 						</a>
 					</div>
 					<div class="col-xs-6 col-md-3">
 						<a href="#" class="thumbnail"> 
-						<img src="${img}/bstbook2.jpg" alt="사피엔스">
+						<img src="${img}/bstbook2.jpg" alt="사피엔스" style="width: 141px; height: 203px;">
 					</a>
 					</div>
 					<div class="col-xs-6 col-md-3">
 						<a href="#" class="thumbnail"> 
-						<img src="${img}/bstbook3.jpg" alt="가끔은 격하게 위로워야 한다.">
+						<img src="${img}/bstbook3.jpg" alt="가끔은 격하게 위로워야 한다." style="width: 141px; height: 203px;">
 						</a>
 					</div>
 					<div class="col-xs-6 col-md-3">
 						<a href="#" class="thumbnail"> 
-						<img src="${img}/bstbook4.jpg" alt="내안에서 나를 만드는 것들">
+						<img src="${img}/bstbook4.jpg" alt="내안에서 나를 만드는 것들" style="width: 141px; height: 203px;">
 						</a>
 					</div>
 				
 					<div class="col-xs-6 col-md-3">
 						<a href="#" class="thumbnail"> 
-						<img src="${img}/bstbook5.jpg" alt="언제 들어도 좋은 말">
+						<img src="${img}/bstbook5.jpg" alt="언제 들어도 좋은 말" style="width: 141px; height: 203px;">
 						</a>
 					</div>
 					<div class="col-xs-6 col-md-3">
 						<a href="#" class="thumbnail"> 
-						<img src="${img}/bstbook6.jpg" alt="중동 테러리즘">
+						<img src="${img}/bstbook6.jpg" alt="중동 테러리즘" style="width: 141px; height: 203px;">
 						</a>
 					</div>
 					<div class="col-xs-6 col-md-3">
 						<a href="#" class="thumbnail"> 
-						<img src="${img}/bstbook7.jpg" alt="혼자 있는 시간의 힘">
+						<img src="${img}/bstbook7.jpg" alt="혼자 있는 시간의 힘" style="width: 141px; height: 203px;">
 						</a>
 					</div>
 					<div class="col-xs-6 col-md-3">
 					<a href="#" class="thumbnail"> 
-					<img src="${img}/bstbook8.jpg" alt="마법천자문. 34: 다르고 뛰어나다! 특별할 특">
+					<img src="${img}/bstbook8.jpg" alt="마법천자문. 34: 다르고 뛰어나다! 특별할 특" style="width: 141px; height: 203px;">
 					</a>
 					</div>
 					
@@ -62,48 +115,50 @@
     </section>
 
     <!-- Download Section -->
-    <section id="download" class="content-section text-center">
+    <section id="download" class="content-section">
         <div class="download-section">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
                 <hr />
-                <h3>나를 위한 맞춤 추천</h3> <h5>관심 있는 작가와 분야에 맞춤 추천</h5>
-                  <!-- 분야 추천 -->
+                <img src="${img}/reco.png" alt="" />
+                 <!-- 분야 추천 -->
                   	<div class="row" style="margin: auto; border: 1px solid silver;
                   	float: center;">
 					<div class="col-xs-6 col-md-3" style="margin: 10px;">
-					<img src="${img}/recome1.jpg" alt="메모 습관의 힘">
+					<img src="${img}/recome1.jpg" alt="메모 습관의 힘" style="width: 141px; height: 203px;">
 					</div>
 					<div class="col-xs-6 col-md-3" style="margin: 10px;">
-						<img src="${img}/recome2.jpg" alt="베스트 편곡으로 배우는 아주 특별한 통기타 교본">
+						<img src="${img}/recome2.jpg" alt="베스트 편곡으로 배우는 아주 특별한 통기타 교본" style="width: 141px; height: 203px;">
 					</div>
 					<div class="col-xs-6 col-md-3" style="margin: 10px;">
-						<img src="${img}/recome3.jpg" alt="하루 세 줄, 마음정리법 일본 최고 의사가 전하는 스트레스 리셋 처방전">
+						<img src="${img}/recome3.jpg" alt="하루 세 줄, 마음정리법 일본 최고 의사가 전하는 스트레스 리셋 처방전" style="width: 141px; height: 203px;">
 					</div>
 					</div>
 					<div class="row" style="margin: auto; border: 1px solid silver;">
 					<div class="col-xs-6 col-md-3" style="margin: 10px;">
-						<img src="${img}/recome4.jpg" alt="패션의 탄생 컬러링북 쇼핑보다 짜릿한 컬러 스타일링">
+						<img src="${img}/recome4.jpg" alt="패션의 탄생 컬러링북 쇼핑보다 짜릿한 컬러 스타일링" style="width: 141px; height: 203px;">
 					</div>
 					<div class="col-xs-6 col-md-3" style="margin: 10px;">
-						<img src="${img}/recome5.jpg" alt="마윈 세상에 어려운 비즈니스는 없다">
+						<img src="${img}/recome5.jpg" alt="마윈 세상에 어려운 비즈니스는 없다" style="width: 141px; height: 203px;">
 					</div>
 					<div class="col-xs-6 col-md-3" style="margin: 10px;">
-						<img src="${img}/recome6.jpg" alt="작고 소박한 나만의 생업 만들기 인생을 도둑맞지 않고 사는 법">
+						<img src="${img}/recome6.jpg" alt="작고 소박한 나만의 생업 만들기 인생을 도둑맞지 않고 사는 법" 
+						style="width: 141px; height: 203px;">
 					</div>
 					</div>
 					<div class="row" style="margin: auto; border: 1px solid silver;">
 						<div class="col-xs-6 col-md-3" style="margin: 10px;">
-						<img src="${img}/recome7.jpg" alt="혼자가 편한 사람들 내성적인 당신의 잠재력을 높여주는 책">
+						<img src="${img}/recome7.jpg" alt="혼자가 편한 사람들 내성적인 당신의 잠재력을 높여주는 책" 
+						style="width: 141px; height: 203px;">
 					</div>
 					<div class="col-xs-6 col-md-3" style="margin: 10px;">
-						<img src="${img}/recome8.jpg" alt="그리스 컬러링 여행">
+						<img src="${img}/recome8.jpg" alt="그리스 컬러링 여행" style="width: 141px; height: 203px;">
 					</div>
 					<div class="col-xs-6 col-md-3" style="margin: 10px;">
-						<img src="${img}/recome9.jpg" alt="월급을 경영하라 월급이 전 재산인 당신을 위한 진심 재테크">
+						<img src="${img}/recome9.jpg" alt="월급을 경영하라 월급이 전 재산인 당신을 위한 진심 재테크" 
+						style="width: 141px; height: 203px;">
 					</div>
 					</div>
-					
 					
                   <!-- 끝 -->
                   <hr />                    
@@ -113,32 +168,57 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="container content-section text-center">
+    <section id="contact" class="container content-section ">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>이주의 책</h2>
-                <p>
-                </p>
+                <img src="${img}/week.png" alt="" /><img src="${img}/icon_ad3.gif" alt="" />
+                <div class="row" style="margin: auto; border: 1px solid silver;">
+						<div class="col-xs-6 col-md-3" style="margin: 10px;">
+						<img src="${img}/weekday1.jpg" alt="참 좋은 당신을 만났습니다." style="width: 141px; height: 203px;">
+					</div>
+					<div class="col-xs-6 col-md-3" style="margin: 10px;">
+						<img src="${img}/weekday2.jpg" alt="나는 이제 좀 행복해져야겠다." style="width: 141px; height: 203px;">
+					</div>
+					<div class="col-xs-6 col-md-3" style="margin: 10px;">
+						<img src="${img}/weekday3.jpg" alt="내 스물아홉 이야기" style="width: 141px; height: 203px;">
+					</div>
+					<div class="col-xs-6 col-md-3" style="margin: 10px;">
+						<img src="${img}/weekday4.jpg" alt="괜찮아, 괜찮아 그래도 괜찮아." style="width: 141px; height: 203px;">
+					</div>
+					<div class="col-xs-6 col-md-3" style="margin: 10px;">
+						<img src="${img}/weekday5.jpg" alt="마음의 눈에만 보이는 것들" style="width: 141px; height: 203px;">
+					</div>
+					<div class="col-xs-6 col-md-3" style="margin: 10px;">
+						<img src="${img}/weekday6.jpg" alt="시드니" style="width: 141px; height: 203px;">
+					</div>
+					</div>
                 <ul class="list-inline banner-social-buttons">
                     <li>
-                    임시
+                    <a href="https://twitter.com/">
+                    <img src="${img}/btn_twitter.jpg" style="width: 50px; height: 50px;" />
+                    </a>
                     </li>
                     <li>
-                    임시
+                    <a href="https://ko-kr.facebook.com/">
+                    <img src="${img}/face_book.jpg" style="width: 50px; height: 50px;" />
+                    </a>
                     </li>
                     <li>
-                    임시
+                    <a href="https://www.google.co.kr/">
+                     <img src="${img}/btn_google.png" style="width: 50px; height: 50px;" />
+                     </a>
                     </li>
                 </ul>
             </div>
         </div>
     </section>
    
-    <!-- jQuery -->
+     <!-- jQuery -->
     <script src="${context}/resources/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="${context}/resources/js/bootstrap.min.js"></script>
+
 
 </div>
 
