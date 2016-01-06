@@ -1,5 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<h1>전체 회원 목록 페이지</h1>
+
+
+<div class="panel panel-default" style="width: 80%; margin: auto;" >
+
+  <div class="panel-heading">전체 회원 목록 페이지</div>
+
+  <table class="table">
+		<TR ALIGN=CENTER><TD WIDTH=7%><B>번호</B></TD>
+		<TD WIDTH=15%><B>아이디</B></TD>
+		<TD WIDTH=15%><B>회원명</B></TD>
+		<TD WIDTH=20%><B>전화번호</B></TD>
+		<TD WIDTH=20%><B>주소</B></TD>
+		<TD WIDTH=20%><B>비고</B></TD></TR>
+  </table>
+</div>
+
 
 <script type="text/javascript">
 $(function() {
@@ -16,23 +31,35 @@ var AdminMemberList = {
 					var groupSize = data.groupSize;
 					var lastPage = data.lastPage;
 					var totalPage = data.totalPage;
+					var arr = [];
+					
 					var table = "<div id='memberList'><h1 align=center style='color:black;margin-bottom:30px'>회원목록</h1>"
 					+"<TABLE id='tab_memberList'>"
-					+"<TR ALIGN=CENTER><TD WIDTH=10%><B>번호</B></TD>"
-					+"<TD WIDTH=20%><B>아이디</B></TD>"
-					+"<TD WIDTH=20%><B>회원명</B></TD>"
-					+"<TD WIDTH=30%><B>전화번호</B></TD>"
-					+"<TD WIDTH=18%><B>주소</B></TD></TR>";
+					+"<TR ALIGN=CENTER><TD WIDTH=7%><B>번호</B></TD>"
+					+"<TD WIDTH=15%><B>아이디</B></TD>"
+					+"<TD WIDTH=15%><B>회원명</B></TD>"
+					+"<TD WIDTH=20%><B>전화번호</B></TD>"
+					+"<TD WIDTH=20%><B>주소</B></TD>"
+					+"<TD WIDTH=20%><B>비고</B></TD></TR>";
 				   
 					$.each(data.list, function(index, value) {
-				 table +="<TR><TD WIDTH=10% ALIGN=CENTER>"+(index+1)+"</TD>"
-						+"<TD WIDTH=20% ALIGN=CENTER>"+this.userid+"</TD>"
-						+"<TD WIDTH=20% ALIGN=CENTER><A HREF='BoardContent.jsp'>"+this.name+"</A></TD>"
-						+"<TD WIDTH=30% ALIGN=LEFT>"+this.phone+"</TD>"
-						+"<TD WIDTH=18% ALIGN=CENTER>"+this.addr+"</TD></TR>"
+				 table +='<TR><TD WIDTH=7% ALIGN=CENTER>'+(index+1)+'</TD>'
+						+'<TD WIDTH=15% ALIGN=CENTER><button id="'+this.userid+'">'+this.userid+'</TD>'
+						+'<TD WIDTH=15% ALIGN=CENTER><A HREF="BoardContent.jsp">'+this.name+'</A></TD>'
+						+'<TD WIDTH=20% ALIGN=LEFT>'+this.phone+'</TD>'
+						+'<TD WIDTH=20% ALIGN=CENTER>'+this.addr+'</TD>'
+						+'<TD WIDTH=20% ALIGN=CENTER><A HREF="#">수정</A><A HREF="#">삭제</A></TD></TR>';
+						
+				 		arr.push(this.userid);
 					});
 					
 					table += '</TABLE></div>';
+					
+					$.each(data.list, function(index, value) {
+						$('#'+arr[index]).click(function() {
+							alert("팝업 클릭");
+						});
+					});
 					
 					var pagination ='<TABLE id="pagination">'
 					+'<TR>'
@@ -95,6 +122,8 @@ var AdminMemberList = {
 					table += pagination;
 					$('.mainView').html(table);
 					
+					
+					
 					AdminMemberList.style();
 					
 				});
@@ -105,13 +134,17 @@ var AdminMemberList = {
 			$('#tab_memberList').css('width','70%').css('height','50px')
 			.css('margin','auto').css('border','1px solid black')
 			.css('CELLSPACING','0').css('CELLPADDING','1px').css('ALIGN','CENTER');
+			
+			$('#pagination').css('width','70%').css('height','50px')
+			.css('margin','auto').css('border','1px solid black')
+			.css('CELLSPACING','0').css('CELLPADDING','1px').css('ALIGN','CENTER');
+			
 			$('td').add('th').css('text-align','center').css('border','1px solid black').css('background-color','white');
 			$('tr').add('th').add('td').css('float','center').css('color','black').css('border','1px solid black');
 			
 
 		},
-		
-		
+	
 		 
 	memberNotExist : function() {
 		var table ='<h1>회원목록</h1><table id="tab_member"><tr><th>아이디</th>';
@@ -120,6 +153,23 @@ var AdminMemberList = {
 			$(table).appendTo($('#main_right').empty());
 	}
  };
+ 
+var Bom = {
+		popup : function(project,id) {
+			alert("팝업");
+			var url = project + "/admin/insert";
+			var name = "팝업";
+			var style = "toolbar=no, status=no, directories=no, scrollbars=yes, location=no, resizable=no, border=0, menubar=no";
+			var param = "page=member_profile&id="+id;
+			var width = 400;
+			var height = 500;
+			var xpos = (screen.availWidth - width) / 2;
+			var ypos = (screen.availHeight - height) / 2;
+			style = style + ",top=" + ypos + ",left=" + xpos + ",width=" + width + ",height=" + height;
+			url = url + param;
+			window.open(url,"",style);
+			}
+		};
  
 </script>
 

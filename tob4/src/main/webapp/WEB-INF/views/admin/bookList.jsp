@@ -1,86 +1,132 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <h1>책 목록 페이지</h1>
-<div id="div_admin_book">
-<table id="tab_admin_book">
-	<tr>
-		<th>책 ID</th>
-		<td id="book_id">${book.bookId}</td>
-	</tr>
-	<tr>
-		<th>책 이름</th>
-		<td id="book_name">${book.bookName}</td>
-	</tr>
-	<tr>
-		<th>책 가격</th>
-		<td id="book_price">${book.bookPrice}</td>
-	</tr>
-	<tr>
-		<th>작가</th>
-		<td id="book_writer">${book.writer}</td>
-	</tr>
-</table>
-	<button id="delete_book" style="float:left">삭제</button>
-	<button id="update_book" style="float:right; margin-right:10px;">등록</button>
-	<button id="modify_book" style="float:right; margin-right:10px;">수정</button>
-</div>
-<script src="${context}/js/global.js"></script>
-<script type="text/javascript">
 
-	$(function() {
-		$("#update_book").css("display","none");
-		$("#delete_book").click(function() {
-			if (confirm("정말 삭제하시겠습니까?")) {
-				$.ajax("${context}/admin/Admin.do?page=delete2",{
-					data : {
-						bookid : $("#book_id").text(),
-					},
-					dataType : "json",
-					success : function(data) {
-						$("#div_admin_book").html(data.result);
-						//부모창의 회원목록 버튼을 클릭하게함
-						opener.document.getElementById("mgmt_book").click();
-					},
-					error : function() {
-						
+<script type="text/javascript">
+$(function() {
+	AdminBookList.list('1');
+});
+
+var AdminBookList = {
+		 list : function(pageNo) {
+			 
+				$.getJSON(context+'/admin/book_list/'+pageNo ,function(data) {
+					var count = data.count;
+					var pageNo = data.pageNo; 
+					var startPage = data.startPage;
+					var groupSize = data.groupSize;
+					var lastPage = data.lastPage;
+					var totalPage = data.totalPage;
+					var table = "<div id='bookList'><h1 align=center style='color:black;margin-bottom:30px'>책 목록</h1>"
+					+"<TABLE id='tab_bookList'>"
+					+"<TR ALIGN=CENTER><TD WIDTH=10%><B>번호</B></TD>"
+					+"<TD WIDTH=20%><B>책아이디</B></TD>"
+					+"<TD WIDTH=20%><B>책이름</B></TD>"
+					+"<TD WIDTH=30%><B>책가격</B></TD>"
+					+"<TD WIDTH=18%><B>작가</B></TD></TR>";
+				   
+					$.each(data.list, function(index, value) {
+				 table +="<TR><TD WIDTH=10% ALIGN=CENTER>"+(index+1)+"</TD>"
+						+"<TD WIDTH=20% ALIGN=CENTER>"+this.bookId+"</TD>"
+						+"<TD WIDTH=20% ALIGN=CENTER><A HREF='BoardContent.jsp'>"+this.bookName+"</A></TD>"
+						+"<TD WIDTH=30% ALIGN=LEFT>"+this.bookPrice+"</TD>"
+						+"<TD WIDTH=18% ALIGN=CENTER>"+this.write+"</TD></TR>"
+					});
+					
+					table += '</TABLE></div>';
+					
+					
+					var pagination ='<TABLE id="pagination">'
+					+'<TR>'
+					+'</TD>'
+					+'<TD WIDTH=320 ALIGN=CENTER>';
+
+					if (startPage != 1) {
+						pagination += 
+						'<a href="#" onclick="AdminbookList.list(1)">'
+						+'<IMG SRC="${img}/admin/btn_bf_block.gif">&nbsp;'
+						+'</a>'
+						+'<a href="#" onclick="AdminBookList.list('+(startPage-groupSize)+')">'
+						+'<IMG SRC="${img}/admin/btn_bf_page.gif">&nbsp;'
+						+'</a>'
 					}
-				});	
-			}
-		});
-		$("#modify_book").click(function() {
-			if(confirm("정말 수정하시겠습니까?")){
-				var bookid = $("#book_id").text();
-				var bookName = $("#book_name").text();
-				var price = $("#book_price").text();
-				$("#book_name").html("<input type='text' id='input_bookName' value=" + bookName + ">");
-				$("#book_price").html("<input type='text' id='input_price' value=" + price + ">");
-				$("#update_book").css("display","inline-block");
-				$("#modify_book").css("display","none");
-				$("#delete_book").css("display","none");
-				//등록버튼을 누르면
-				$("#update_book").click(function() {
-					if(confirm("정말 등록하시겠습니까?")){
-						console.log(bookid + bookName + price);
-						$.ajax("${context}/admin/Admin.do?page=insert2",{
-							data : {
-								bookid : $("#book_id").text(),
-								name : $("#input_bookName").val(),
-								price : $("#input_price").val()
-							},
-							dataType : "json",
-							success : function(data) {
-								$("#div_admin_book").html(data.result);
-								//부모창의 책목록 버튼을 클릭하게함
-								opener.document.getElementById("mgmt_book").click();
-							},
-							error : function() {
-								
-							}
-						});				
+					
+					for (var i = startPage; i <= lastPage; i++) {
+						if (i == pageNo ) {
+							pagination +=
+								'<font style="color:red;font-size: 20px">'+i+'</font>';
+						} else {
+							pagination +=
+								'<a href="#" onclick="AdminBookList.list('+i+')">'
+								+'<font>'+i+'</font>'
+								+'</a>';
+						}
 					}
+					
+					if (lastPage != totalPage) {
+						pagination +=
+						    '<a href="#" onclick="AdminBookList.list('+(startPage + groupSize)+')">'
+		    	            +'<IMG SRC=" ${img}/admin/btn_nxt_page.gif"> &nbsp;'
+		           			+'</a>'
+		           			+'<a href="#" onclick="AdminBookList.list('+(totalPage - ((totalPage-1) % groupSize))+')">'
+		                	+'<IMG SRC=" ${img}/admin/btn_nxt_block.gif"> &nbsp;'
+		           			+'</a>';
+					}
+					pagination +='</TD>';
+					
+					
+					pagination += '<TD WIDTH=200 ALIGN=RIGHT>'
+					+'<FORM NAME="memberSearch" action="'+context+'/admin/BookSearch/1" style="color: black">'
+					+'<SELECT NAME="column" SIZE=1>'
+					+'<OPTION VALUE="" SELECTED>선택'
+					+'</OPTION>'
+					+'<OPTION VALUE="id">ID'
+					+'</OPTION>'
+					+'<OPTION VALUE="name">이름'
+					+'</OPTION>'
+					+'<OPTION VALUE="gender">성별'
+					+'</OPTION>'
+					+'</SELECT>'
+					+'<INPUT TYPE=TEXT NAME="keyword" SIZE=10 MAXLENGTH=20>'
+					+'<INPUT TYPE=submit value="검색">'
+					+'</FORM>'
+					+'</TD>'
+					+'</TR>'
+					+'</TABLE>';
+					
+					table += pagination;
+					$('.mainView').html(table);
+					
+					
+					
+					AdminBookList.style();
+					
 				});
-			}
-		});
+
+		},
 		
-	});
+		style : function(){
+			$('#tab_BookList').css('width','70%').css('height','50px')
+			.css('margin','auto').css('border','1px solid black')
+			.css('CELLSPACING','0').css('CELLPADDING','1px').css('ALIGN','CENTER');
+			
+			$('#pagination').css('width','70%').css('height','50px')
+			.css('margin','auto').css('border','1px solid black')
+			.css('CELLSPACING','0').css('CELLPADDING','1px').css('ALIGN','CENTER');
+			
+			$('td').add('th').css('text-align','center').css('border','1px solid black').css('background-color','white');
+			$('tr').add('th').add('td').css('float','center').css('color','black').css('border','1px solid black');
+			
+
+		},
+	
+		 
+	memberNotExist : function() {
+		var table ='<h1>회원목록</h1><table id="tab_member"><tr><th>아이디</th>';
+			table += '<th>이름</th><th>성별</th><th>생년원일</th><th>전화번호</th><th>이메일</th></tr>';
+			table += '<tr><td colspan="6"><h2>회원목록이 없습니다.</h2></td></tr></table>';
+			$(table).appendTo($('#main_right').empty());
+	}
+ };
+ 
 </script>
 
