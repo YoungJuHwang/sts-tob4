@@ -189,10 +189,22 @@ INSERT INTO CART VALUES('20151101-0003',null,null,'2');
 INSERT INTO CART VALUES('20151101-0004',null,null,'3');
 INSERT INTO CART VALUES('20151101-0005',null,null,'3');
 
-INSERT INTO EVENT VALUES('random','선착순증정이벤트','2010.11.11','2010.12.11','E001.jpg');
-INSERT INTO EVENT VALUES('resverve','예약판매이벤트','2013.12.01','2013.12.15','E002.jpg');
-INSERT INTO EVENT VALUES('lotto','로또이벤트','2011.12.01','2015.25','E003.jpg');
-INSERT INTO EVENT VALUES('jeong','정민아 너가 알아서','2001.01.17','2015.01.11','E004.jpg');
-INSERT INTO EVENT VALUES('min','이벤트하나 만들어','2013.02.17','2015.25','E005.jpg');
+INSERT INTO EVENT VALUES('best','2015년 베스트셀러전','2015/12/30','2016/01/31','E001.jpg');
+INSERT INTO EVENT VALUES('chance','[외서] 01월 BIG CHANCE! 10% 쿠폰 추가 증정','2016/01/01','2016/01/31','E002.jpg');
+INSERT INTO EVENT VALUES('soft','소프트 스킬 리뷰어 이벤트','2016/01/01','2016/01/31','E003.jpg');
+INSERT INTO EVENT VALUES('tech','응답하라!! 재테크','2016/01/01','2016/02/29','E004.jpg');
+INSERT INTO EVENT VALUES('gichul','공무원기출 완전 공략','2016/01/01','2016/01/31','E005.jpg');
+INSERT INTO EVENT VALUES('hackers','해커스 외국어 브랜드','2016/01/01','2016/01/31','E006.jpg');
+INSERT INTO EVENT VALUES('topik','2016 TOPIK! 한방에 끝내자!','2016/01/01','2016/01/31','E007.jpg');
+INSERT INTO EVENT VALUES('songgok','[특별 기획] 송곳과 한국 사회','2015/01/01','2016/01/31','E008.jpg');
+INSERT INTO EVENT VALUES('bookreport','<소년과재규어>독후감상문대회 이벤트','2015/01/01','2016/01/31','E009.jpg');
+INSERT INTO EVENT VALUES('facebook','마크 저커버그 A Year of Books','2016/01/01','2016/01/31','E010.jpg');
+INSERT INTO EVENT VALUES('project','531 프로젝트 완간 기념 이벤트','2016/01/01','2016/01/31','E011.jpg');
+INSERT INTO EVENT VALUES('publish','<시작의힘> 출간 이벤트','2016/01/01','2016/01/31','E0012.jpg');
+INSERT INTO EVENT VALUES('highschool','EBS 고등 방학 교재! 무료배송 + 정가제 최대 할인 보장','2016/01/01','2016/01/31','E0013.jpg');
+INSERT INTO EVENT VALUES('cat','<상상고양이> 출간 이벤트','2016/01/01','2016/01/31','E0014.jpg');
+INSERT INTO EVENT VALUES('comments','<사는게 참 좋다> 한줄평 이벤트','2016/01/01','2016/01/31','E0015.jpg');
+INSERT INTO EVENT VALUES('markrecommend','[교보 외서] 2015년 마크 주커버그 추천 도서','2016/01/01','2016/01/31','E0016.jpg');
+
 
 COMMIT;

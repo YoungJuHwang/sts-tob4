@@ -27,7 +27,8 @@
 		<li style="padding-right: 100px;">
 		<a href="${context}/event/Event"><b>EVENT</b></a></li>
 		<li style="padding-right: 100px;"><a href="${context}/purchase/Purchase"><b>Purchase</b></a></li>
-		<li style="padding-right: 100px;"><button id="btn_pur"> 이게 구매버튼 </button></li>
+		<li style="padding-right: 100px;"><button id="btn_pur"> 구매목록버튼 </button></li>
+		<li style="padding-right: 100px;"><button id="btn_cart"> 장바구니 </button></li>
 		<li style="float: right"><a href="${context}/admin/main"><span class="glyphicon glyphicon-user"></span>관리자</a></li>
 		<li style="float: right"><a href="${context}/member/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 		<li style="float: right"><a href="${context}/member/Join">Join</a></li>
@@ -40,6 +41,10 @@
 		$('#btn_pur').click(function() {
 			alert('구매버튼 클릭');
 			Purchase.main(context);
+		});
+		$('#btn_cart').click(function() {
+			alert('장바구니 버튼 클릭');
+			Cart.main(context);
 		});
 	});
 </script>
