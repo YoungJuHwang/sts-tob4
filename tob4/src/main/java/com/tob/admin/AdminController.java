@@ -69,7 +69,7 @@ public class AdminController {
 		logger.info("넘어온 페이지번호 : {}",pageNo);
 		
 		int pageNumber = Integer.parseInt(pageNo);
-		int pageSize = 5;
+		int pageSize = 3;
 		int groupSize = 3;
 		int count = memberService.count();
 		logger.info("넘어온 카운트 : {}",count);
