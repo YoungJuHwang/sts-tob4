@@ -31,5 +31,10 @@ public class CartController {
 		return list;
 	}
 	
+	@RequestMapping("/put/{bookid}")
+	public String put(){
+		
+		return null;
+	}
 	
 }

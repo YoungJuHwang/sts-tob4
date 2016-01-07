@@ -21,6 +21,6 @@ var Cart = {
 		});
 	},
 	put : function(bookid) {
-		
+		$.getJSON('${context}/cart/')
 	}
 };
