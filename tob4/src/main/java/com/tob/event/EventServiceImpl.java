@@ -20,14 +20,14 @@ public class EventServiceImpl implements EventService {
 	@Autowired private SqlSession sqlSession;
 
 	@Override
-	public int change(EventVO o) {
+	public int update(EventVO o) {
 		EventMapper mapper = sqlSession.getMapper(EventMapper.class);
 		return mapper.update(o);
 	}
 	@Override
-	public int remove(String evtName) {
+	public int delete(String evtId) {
 		EventMapper mapper = sqlSession.getMapper(EventMapper.class);
-		return mapper.delete(evtName);
+		return mapper.delete(evtId);
 	}
 	@Override
 	public int count() {
@@ -35,13 +35,14 @@ public class EventServiceImpl implements EventService {
 		return mapper.count();
 	}
 	@Override
-	public List<EventVO> getList(Command command) {
+	public List<EventVO> selectAll(Command command) {
 		EventMapper mapper = sqlSession.getMapper(EventMapper.class);
 		return mapper.selectAll(command);
 	}
 	@Override
-	public int join(EventVO o) {
+	public int insert(EventVO o) {
 		EventMapper mapper = sqlSession.getMapper(EventMapper.class);
 		return mapper.insert(o);
 	}
+
 }

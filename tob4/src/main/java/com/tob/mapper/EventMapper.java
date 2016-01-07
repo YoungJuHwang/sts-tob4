@@ -13,5 +13,5 @@ public interface EventMapper {
 	public int insert(EventVO o);
 	public int update(EventVO o);
 	public int count();
-	public int delete(String evtName);
+	public int delete(String evtId);
 }

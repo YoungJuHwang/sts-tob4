@@ -5,9 +5,9 @@ import java.util.List;
 import com.tob.global.Command;
  
 public interface EventService {
-	public int join(EventVO o);
-	public int change(EventVO o);
-	public int remove(String evtName);
+	public int insert(EventVO o);
+	public int update(EventVO o);
+	public int delete(String evtId);
 	public int count();
-	public List<EventVO> getList(Command command);
+	public List<EventVO> selectAll(Command command);
 }
