@@ -16,18 +16,11 @@ public class MemberServiceImpl implements MemberService{
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	@Autowired private SqlSession sqlSession;
 	
-		@SuppressWarnings("unused")
 		@Override
-		public String Join(MemberVO o) {
-			logger.info("MemberServiceImpl : Join");
+		public int join(MemberVO member) {
+			logger.info("MemberServiceImpl : join");
 			MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
-			return "member/Join.tiles";
-		}
-		@Override
-		public int join2(MemberVO o) {
-			logger.info("MemberServiceImpl : join2");
-			MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
-			return mapper.insert(o);
+			return mapper.insert(member);
 		}
 		@Override
 		public int change(MemberVO o) {

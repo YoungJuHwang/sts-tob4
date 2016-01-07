@@ -23,13 +23,9 @@ public class MemberController {
     @Autowired MemberServiceImpl service;
     @Autowired MemberVO member;
 
-    @RequestMapping("/Join")
-    public String join(){
-        logger.info("멤버컨트롤러 Join() - 진입");
-        return "member/Join.tiles";
-    }
-    @RequestMapping("/Join2")
-    public Model join2(
+
+    @RequestMapping("/join")
+    public Model join(
             String userid,
             String password,
             String name,
@@ -56,7 +52,7 @@ public class MemberController {
         member.setPhone(phone);
         member.setAddr(addr);
 
-        int result = service.join2(member);
+        int result = service.join(member);
         if (result == 1) {
             logger.info("회원가입 성공");
             model.addAttribute("result","success");

@@ -34,19 +34,14 @@
 		<li style="padding-right: 100px;"><button id="btn_pur"> 이게 구매버튼 </button></li>
 		<li style="float: right"><a href="${context}/admin/main"><span class="glyphicon glyphicon-user"></span>관리자</a></li>
 		<li style="float: right"><a href="${context}/member/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-		<li style="float: right"><a href="#joinForm" id="join">Join</a></li>
+		<li style="float: right"><a href="${context}/member/join" id="join"><span class="glyphicon glyphicon-join"></span> join</a></li>
+		<li style="float: right"><a href="${context}/member/mypage" id="mypage"><span class="glyphicon glyphicon-mypage"></span> mypage</a></li>
 	
 	</ul>
 	</div>
 </div>
 
-<div id="joinForm" class="white-popup-block mfp-hide" 
-	style='background-color: white; margin : 0 auto;'>
-	<!-- <h1>모달 테스트</h1>
-	 -->
-	<jsp:include page="../member/Join.jsp"></jsp:include>
 
-</div>
 <!-- 
  <script type="text/javascript">
 	$(function() {
