@@ -52,7 +52,7 @@ var book = {
 				+'<br /><br /><br /><br />'
 				+'<input type="button"  value="장바구니에 담기" id="cart">'
 				+'<input type="button"  value="바로구매" id="buy">'
-				+'<br /><br /><br /><br />';
+				+'<br /><br /><br /><br />'; 
 				arr.push(this.bookId);
 			});
 			
