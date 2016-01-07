@@ -102,8 +102,9 @@ var book = {
 			$.each(data.list, function(i, value) {
 				$('#'+arr[i]).click(function() {
 					alert("책 상세 정보를 보여주는 페이지로 넘어갑니다.");
-					book.mainPage(bookId);
-					Cart.put(bookid);
+					book.mainPage(arr[i]);
+					alert("진짜 넘어감 ㄱㅇㄷ")
+					Cart.put(arr[i]);
 			});
 
 				
@@ -113,8 +114,8 @@ var book = {
 		},
 		
 		
-	mainPage : function(context,bookId) {
-			$.getJSON(context + '/book/Book_main'+bookId ,function(data){
+	mainPage : function(bookId) {
+			$.getJSON(context + '/book/Book_main/'+bookId ,function(data){
 				alert('제이슨 넘어옴.')
 				var bookPage = '<div class="contents">'
 					+'<div class="book">'
