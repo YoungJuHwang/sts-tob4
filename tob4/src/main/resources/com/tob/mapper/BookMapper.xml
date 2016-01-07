@@ -19,7 +19,6 @@ DELETE FROM BOOK WHERE BOOK_ID = #{bookId}
 </delete>
 
 
-
 <select id="searchByBook" parameterType="string" resultType="com.tob.book.BookVO">
 SELECT
 
@@ -31,7 +30,7 @@ GRADE AS grade,
 STOCK_SEQ AS bookseq,
 OPTION_ID AS optionBook,
 GENRE_ID AS genreId
-GENRE_ID AS genreId
+
 
 FROM BOOK WHERE BOOK_ID = #{bookId}
  

@@ -31,6 +31,12 @@ public class GenreServiceImpl implements GenreService {
 		GenreMapper mapper = sqlSession.getMapper(GenreMapper.class);
 		return mapper.searchByGenre(genre);
 	}
+
+	@Override //장르검색 카테고리
+	public GenreVO searchByGenre1(String cate) {
+		GenreMapper mapper = sqlSession.getMapper(GenreMapper.class);
+		return mapper.searchByGenre(cate);
+	}
 	
 	
 }

@@ -6,9 +6,9 @@
  
  <insert id="registration" parameterType="com.tob.genre.GenreVO">
  INSERT INTO GENRE
- (GENRE_ID,GENRE_NAME)
+ (GENRE_ID,GENRE_NAME,CATEGORY_ID)
  VALUES
- (#{genreId},#{genreName})
+ (#{genreId},#{genreName},#{categoryId})
  
  </insert>
  
@@ -21,8 +21,10 @@
  <select id="searchByGenre" parameterType="string" resultType="com.tob.genre.GenreVO">
  SELECT
 GENRE_ID AS genreId,
-GENRE_NAME AS genreName 
-  FROM GENRE WHERE GENRE_ID = #{genreId}
+GENRE_NAME AS genreName,
+CATEGORY_ID AS categoryId 
+
+  FROM GENRE WHERE GENRE_ID = #{categoryId}
  
  </select>
  

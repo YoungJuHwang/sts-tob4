@@ -16,6 +16,7 @@ var book = {
 					+'<p><font>과학</font><br /><p><font>생활</font><br /><p><font>베스트셀러</font><br /><p><font>이달의 책</font><br /><p><font>월페이퍼</font><br /><p><font>경영학'
 					+'원</font><br /><p><font>무료zone</font><br /><p></div>'
 					);
+			
 			$('#social').click(function() {
 			book.bookEmpty();
 			book.bookSimplePage('1');
@@ -102,9 +103,8 @@ var book = {
 			$.each(data.list, function(i, value) {
 				$('#'+arr[i]).click(function() {
 					alert("책 상세 정보를 보여주는 페이지로 넘어갑니다.");
+					book.bookEmpty();
 					book.mainPage(arr[i]);
-					alert("진짜 넘어감 ㄱㅇㄷ")
-					Cart.put(arr[i]);
 			});
 
 				
@@ -116,30 +116,31 @@ var book = {
 		
 	mainPage : function(bookId) {
 			$.getJSON(context + '/book/Book_main/'+bookId ,function(data){
-				alert('제이슨 넘어옴.')
 				var bookPage = '<div class="contents">'
+					
 					+'<div class="book">'
-					+'	<img src="in_book1.PNG" width="250px" height="353px"  />'
+					+'<img alt="" src="'+context+'/resources/images/'+data.bookId+'.jpg" width="200px" height="301px" align="left">'
 					+'</div>'
 					+'<div class="book2">'
-					+'<font color="white" class="blue"><strong>'+this.optionBook+'</strong></font>'
-					+'<font color="white" class="maroon" >개굳</font>'
-					+'<br />'
 					+'<br />'
 					+'<p>'
-					+'<font color="#00BFFF" size="20px"><strong>'+this.bookName+'</strong></font><font>　</font><font color="black" size="2px"><strong> 어느 괴짜 과학자의 화성판 어드벤처 생존기 | 앤디 위어 장편소설</strong></font><br /><br />'
-					+'<font>　　　　　　　　　　　　　</font> <font color="gray" size="2px">'+this.writer+'</font><br />'
-					+'<font>　　　　　　　　　　　　　</font><font color="#DC143C" size="3px">'+this.grade+'</font><font>　</font><br />'
+					+'<font color="#00BFFF" size="20px"><strong>'+data.bookName+'</strong></font><font>　</font><font color="black" size="2px"><strong> 어느 괴짜 과학자의 화성판 어드벤처 생존기 | 앤디 위어 장편소설</strong></font><br /><br />'
+					+'<font>　　　　　　　　　　　　　</font> <font color="gray" size="2px">'+data.writer+'</font><br />'
+					+'<font>　　　　　　　　　　　　　</font><font color="#DC143C" size="3px">'+data.grade+'</font><font>　</font><br />'
 					+'<br /><br /><br /><br /><br /><br /><br /><br />'
-					+'<font>　　　　　　　</font><font color="black" size="3px">판매가 :</font> <font color="red" size="7pk"><strong>'+data.price+'</strong></font><font color="purple" size="3px"><strong>[10%↓ 1,500원 할인]</strong></font><br />'
-					+'<font>　　　　　　　</font><font color="black">제휴할인가 :</font> <font color="skyblue" size="3px"><strong><12,820원</strong></font><font color="black">교보-KB국민카드 5% 청구할인(실적무관)</font><font>　　</font><input type="button" onclick="다음 페이지로.." value="카드/포인트 안내"><br />'
-					+'<br /></div></div>'
+					+'<font>　　　　　　　</font><font color="black" size="3px">판매가 :</font> <font color="red" size="7pk"><strong>'+data.bookPrice+'</strong></font><font color="purple" size="3px"><strong>[10%↓ 1,500원 할인]</strong></font><br />'
+					+'<font>　　　　　　　</font><font color="black">제휴할인가 :</font> <font color="skyblue" size="3px"><strong><12,820원</strong></font><font color="black">교보-KB국민카드 5% 청구할인(실적무관)</font><font>　　</font>'
+					+'<input type="button" onclick="다음 페이지로.." value="구매하기">'
+					+'<input type="button" onclick="다음 페이지로.." value="장바구니에 담기"><br />'
+					
+					+'<br /></div></div>';
+				$('.mainView').html(bookPage);
 			});
 		},
 		
 		/*비우기*/
 		bookEmpty : function() {
-			$('').appendTo($('.mainview').empty());
+			$('.mainView').appendTo($('.mainView').empty());
 		},
 		
 		/*실험용 알러트*/

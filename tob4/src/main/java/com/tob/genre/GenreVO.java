@@ -9,7 +9,16 @@ public class GenreVO implements Serializable{
 
 	private String genreId;  //장르 고유번호
 	private String genreName; //장르
+	private String categoryId; // 카테고리 id
 	 
+	
+	
+	public String getCategoryId() {
+		return categoryId;
+	}
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId;
+	}
 	public String getGenreId() {
 		return genreId;
 	}
@@ -27,8 +36,9 @@ public class GenreVO implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "GenreVO [genreId=" + genreId + ", genreName=" + genreName + "]";
+		return "GenreVO [genreId=" + genreId + ", genreName=" + genreName + ", categoryId=" + categoryId + "]";
 	}
+	
 	
 	
 	
