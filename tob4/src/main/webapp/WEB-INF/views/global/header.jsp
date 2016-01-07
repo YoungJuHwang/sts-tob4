@@ -35,7 +35,8 @@
 		
 		<li style="float: right"><a href="${context}/admin/main"><span class="glyphicon glyphicon-user"></span>관리자</a></li>
 		<li style="float: right"><a href="${context}/member/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-		<li style="float: right"><a href="#joinForm" id="join">Join</a></li>
+		<li style="float: right"><a href="${context}/member/join" id="join">Join</a></li>
+		<li style="float: right"><a href="${context}/member/mypage" id="mypage">My page</a></li>
 		</c:if>
 		<c:if test="${not empty sessionScope.user}">
 		<li style="float: right;">${user.name}님 반갑습니다.</li>
@@ -46,28 +47,9 @@
 	</div>
 </div>
 
-<div id="joinForm" class="white-popup-block mfp-hide" 
-	style='background-color: white; margin : 0 auto;'>
-	<!-- <h1>모달 테스트</h1>
-	 -->
-	<jsp:include page="../member/Join.jsp"></jsp:include>
-
-</div>
 <script type="text/javascript">
 	$(function() {
-		/* $('#join').magnificPopup({
-			type : 'inline',
-			preloader : false,
-			modal : true,
-			closeContentPos : true,
-			fixedContentPos: true,
-	        alignTop: false, 최상단위치 
-			showCloseBtn: true
-		});
-		$(document).on('click','.popupClose',function(e){
-			e.preventDefault();
-			$.magnificPopup.close();
-		}); */
+		
 		
 		$('#home').click(function() {
 			alert('혜숙이한테 디폴트페이지 만들어라 하고 연결시켜야함.');
