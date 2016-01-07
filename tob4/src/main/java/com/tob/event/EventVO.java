@@ -13,20 +13,19 @@ public class EventVO  implements Serializable{
 	private String evtName;
 	private String fromDt;
 	private String toDt;
+	private String profile;
 
 	
-	public static EventVO instance = new EventVO();
-	public static EventVO getInstance(){
-		return instance;
-	}
 	public EventVO() {
 		// TODO Auto-generated constructor stub
 	}
-	public EventVO(String evtId,String evtName,String fromDt,String toDt) {
+	
+	public EventVO(String evtId,String evtName,String fromDt,String toDt,String profile) {
 		this.evtId = evtId;
 		this.evtName = evtName;
 		this.fromDt = fromDt;
 		this.toDt = toDt;
+		this.profile = profile;
 	}
 	public String getEvtId() {
 		return evtId;
@@ -52,10 +51,18 @@ public class EventVO  implements Serializable{
 	public void setToDt(String toDt) {
 		this.toDt = toDt;
 	}
+	public String getProfile() {
+		return profile;
+	}
+	public void setProfile(String profile) {
+		this.profile = profile;
+	}
 	@Override
 	public String toString() {
-		return "이벤트 [당첨자 아이디=" + evtId + ", 이벤트명=" + evtName + ", 첫기간=" + fromDt + ", 끝기간=" + toDt + "]";
+		return "EventVO [evtId=" + evtId + ", evtName=" + evtName + ", fromDt=" + fromDt + ", toDt=" + toDt
+				+ ", profile=" + profile + "]";
 	}
+	
 	
 	
 }

@@ -28,5 +28,6 @@
 <script src="${js}/purchase.js"></script> 
 <script src="${js}/cart.js"></script> 
 <script src="${js}/Book.js"></script>
+<script src="${js}/event.js"></script>
 </body>
 </html>
